@@ -1,6 +1,10 @@
 import {ADD_FACE, REMOVE_FACE} from '../actions/types';
 
-const generalReducer = (state, action) => {
+const initialState = {
+  coolFaces: 2
+}
+
+const generalReducer = (state=initialState, action) => {
   switch (action.type) {
     case ADD_FACE:
       return {...state, coolFaces: state.coolFaces + 1};

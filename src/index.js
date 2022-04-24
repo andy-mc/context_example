@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import {GeneralProvider} from './context/GeneralContext';
+import {generalReducer} from './reducers/generalReducer';
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
 
+const store = createStore(generalReducer);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GeneralProvider>
+    <Provider store={store}>
       <App />
-    </GeneralProvider>
+    </Provider>
   </React.StrictMode>
 );
 

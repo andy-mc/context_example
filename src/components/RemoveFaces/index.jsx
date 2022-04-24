@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { GeneralContext } from "../../context/GeneralContext";
+import { useDispatch } from "react-redux";
 import {removeFace} from '../../actions/actions';
 
 export const RemoveFaces = () => {
-  const {dispatch} = useContext(GeneralContext);
+  const dispatch = useDispatch();
   const handleRemoveFace = () => {
     dispatch(removeFace())
   }

@@ -1,14 +1,13 @@
-import {useContext} from 'react';
+import { useSelector } from "react-redux";
 import './coolFaces.css';
-import {GeneralContext} from '../../context/GeneralContext';
 
 const CoolFaces = () => {
-  const {state} = useContext(GeneralContext);
-  const coolFaces = Array(state.coolFaces).fill('😎')
+  const coolFaces = useSelector((state) => state.coolFaces);
+  const coolFacesArray = Array(coolFaces).fill('😎')
   
   return (
     <ul>
-      {coolFaces.map((face, index) => (
+      {coolFacesArray.map((face, index) => (
         <li key={index}>
           <span className="faces">{face}</span>
         </li>
