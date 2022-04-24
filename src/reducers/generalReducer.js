@@ -7,7 +7,7 @@ const generalReducer = (state, action) => {
     case REMOVE_FACE:
       return {...state, coolFaces: state.coolFaces > 0 ? state.coolFaces - 1 : 0};
     default:
-      throw new Error(`${action.type} has no generalReducer`);
+      return state;
   }
 }
 
