@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { GeneralContext } from "../../context/GeneralContext";
+import {removeFace} from '../../actions/actions';
+
 export const RemoveFaces = () => {
+  const {dispatch} = useContext(GeneralContext);
   const handleRemoveFace = () => {
-    console.log('handleRemoveFace:', handleRemoveFace)
+    dispatch(removeFace())
   }
   
   return (
