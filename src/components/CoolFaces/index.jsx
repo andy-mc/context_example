@@ -1,11 +1,14 @@
+import {useContext} from 'react';
 import './coolFaces.css';
+import {GeneralContext} from '../../context/GeneralContext';
 
-export const CoolFaces = () => {
-  const faces_number = 2;
-  const cool_faces = Array(faces_number).fill('😎')
+const CoolFaces = () => {
+  const {state} = useContext(GeneralContext);
+  const coolFaces = Array(state.coolFaces).fill('😎')
+  
   return (
     <ul>
-      {cool_faces.map((face, index) => (
+      {coolFaces.map((face, index) => (
         <li key={index}>
           <span className="faces">{face}</span>
         </li>
@@ -13,3 +16,5 @@ export const CoolFaces = () => {
     </ul>
   );
 }
+
+export {CoolFaces};
